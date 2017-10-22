@@ -45,12 +45,33 @@ https://dev.classmethod.jp/cloud/circleci-codedeploy/
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Action": [
-        "s3:Get*",
-        "s3:List*"
-      ],
       "Effect": "Allow",
-      "Resource": "*"
+      "Action": [
+        "codedeploy:RegisterApplicationRevision",
+        "codedeploy:GetApplicationRevision"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "codedeploy:CreateDeployment",
+        "codedeploy:GetDeployment"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "codedeploy:GetDeploymentConfig"
+      ],
+      "Resource": [
+        "*"
+      ]
     }
   ]
 }
