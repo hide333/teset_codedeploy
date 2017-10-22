@@ -107,7 +107,7 @@ deployment:
           s3_location:
             bucket: teset-codedeploy-app
             key_pattern: CodeDeployDemoApplication-{BRANCH}-{SHORT_COMMIT}
-        deployment_group: DemoFleet
+        deployment_group: CodeDeployDemoFleet
         deployment_config: CodeDeployDefault.AllAtOnce
 ```
 
