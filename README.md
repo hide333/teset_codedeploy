@@ -111,3 +111,33 @@ deployment:
         deployment_config: CodeDeployDefault.AllAtOnce
 ```
 
+## masterにpushしてみる
+* pushしたら成功した
+
+## deploy groupを修正してデプロイしてみた
+* 既存のEC2インスタンスに指定してやってみた
+    * エラーになった
+    * たぶん、CodeDeployのエージェントがないせい
+    * インストールしてみる
+```bash
+$ rpm -qi codedeploy-agent
+package codedeploy-agent is not installed
+```
+
+```
+sudo yum update
+cd /home/ec2-user
+aws s3 cp s3://aws-codedeploy-ap-northeast-1/latest/install . --region ap-northeast-1
+chmod +x ./install
+sudo ./install auto
+```
+
+### エラーになりました
+```
+$ aws s3 cp s3://aws-codedeploy-ap-northeast-1/latest/install . --region ap-northeast-1
+fatal error: Unable to locate credentials
+```
+IAM RoleをEc2に付与する必要があるそうです
+* EC2一覧から対象のEC2を右クリックしてIAM ロールの割当/置換
+* 先ほどDEMOで作ったIAMロールを割り当て
+* 完了でさっきのコマンド再実行
