@@ -84,7 +84,7 @@ deployment:
         revision_location:
           revision_type: S3
           s3_location:
-            bucket: chiba-app
+            bucket: teset-codedeploy-app
             key_pattern: CodeDeployDemoApplication-{BRANCH}-{SHORT_COMMIT}
         deployment_group: DemoFleet
         deployment_config: CodeDeployDefault.AllAtOnce
