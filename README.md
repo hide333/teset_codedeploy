@@ -10,7 +10,7 @@ https://dev.classmethod.jp/cloud/circleci-codedeploy/
 ## デプロイ用S3バケットの作成するよ
 * バケット名： teset-codedeploy-app
 
-## CodeDeployを作成するよ
+## DEMOでCodeDeployを作成するよ
 * Blue/Green と インプレース デプロイの作成でデモが出来るやっとこう
 参考：http://aws.typepad.com/sajp/2015/12/what-is-blue-green-deployment.html
 * 
@@ -141,3 +141,5 @@ IAM RoleをEc2に付与する必要があるそうです
 * EC2一覧から対象のEC2を右クリックしてIAM ロールの割当/置換
 * 先ほどDEMOで作ったIAMロールを割り当て
 * 完了でさっきのコマンド再実行
+* やっぱりエラー codedeployのデプロイのイベント表示で詳細見たら scripts/install_dependencies yum httpdでエラーだった
+* エラー個所をコメアウトして再実行→成功！
