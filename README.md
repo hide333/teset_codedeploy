@@ -78,7 +78,7 @@ https://dev.classmethod.jp/cloud/circleci-codedeploy/
 ```
 
 * アクセスキー： AKIAJHLUIK5O3YQ5SYTA
-* シークレットアクセスキー： gDvkDmQlbpQheiMJHAPBKWAbDxSao70TwUoIOxtS
+* シークレットアクセスキー： 
 
 
 ## CircleCIへIAMユーザを登録
